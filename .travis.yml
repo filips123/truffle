@@ -12,16 +12,20 @@ before_install:
 matrix:
   fast_finish: true
   include:
-    - node_js: 8
+    - node_js: 10
       env: GETH=true
+    - node_js: 10
+      env: PACKAGES=true
+    - node_js: 10
+      env: INTEGRATION=true
+    - node_js: 10
+      env: COVERAGE=true
     - node_js: 8
       env: PACKAGES=true
-    - node_js: 8
-      env: INTEGRATION=true
-    - node_js: 8
-      env: COVERAGE=true
+    - node_js: 12
+      env: PACKAGES=true
   allow_failures:
-    - node_js: 8
+    - node_js: 10
       env: COVERAGE=true
 
 install:
